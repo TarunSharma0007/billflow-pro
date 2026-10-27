@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BillFlow Pro — Universal Industry-Agnostic Billing CRM</title>
+  <meta name="description" content="Next-generation offline-first billing CRM with dynamic industry templates, AI invoice suggestions, anomaly detection, loyalty engine, and real-time analytics.">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/design-system.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+
+  <!-- External CDNs for Charts & PDF -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+  <div class="app-container">
+    <!-- Left Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-brand">
+        <div class="brand-logo">⚡</div>
+        <div class="brand-text" id="brandNameDisplay">BillFlow <span>Pro</span></div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="sidebar-label">Navigation</div>
+        <a href="#dashboard" class="nav-item active" id="navDashboard">
+          <span class="nav-icon">📊</span>
+          <span class="nav-text">Dashboard</span>
+        </a>
+        <a href="#invoices" class="nav-item" id="navInvoices">
+          <span class="nav-icon">📝</span>
+          <span class="nav-text" id="navInvText">Invoices</span>
+        </a>
+        <a href="#customers" class="nav-item" id="navCustomers">
+          <span class="nav-icon">👥</span>
+          <span class="nav-text" id="navCustText">Customers</span>
+        </a>
+        <a href="#inventory" class="nav-item" id="navInventory">
+          <span class="nav-icon">📦</span>
+          <span class="nav-text" id="navItemText">Inventory</span>
+        </a>
+        <a href="#reports" class="nav-item" id="navReports">
+          <span class="nav-icon">📈</span>
+          <span class="nav-text">Reports & P&L</span>
+        </a>
+
+        <div class="sidebar-label">System</div>
+        <a href="#settings" class="nav-item" id="navSettings">
+          <span class="nav-icon">⚙️</span>
+          <span class="nav-text">Settings</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <button class="sidebar-toggle" id="sidebarToggleBtn" title="Collapse sidebar">
+          <span>◀▶</span>
+          <span class="sidebar-footer-text">Collapse Menu</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main App Content Wrapper -->
+    <div class="main-wrapper">
+      <!-- Top Header Bar -->
+      <header class="main-header">
+        <div class="header-left">
+          <button class="header-icon-btn mobile-only" id="mobileMenuBtn" style="display:none" title="Open Menu">☰</button>
+          <div>
+            <div class="header-title" id="headerTitleDisplay">BillFlow Pro</div>
+            <div class="header-subtitle" id="headerSubtitleDisplay">Universal Billing CRM • Offline-First</div>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <!-- Global Search -->
+          <div class="header-search">
+            <span class="search-icon">🔍</span>
+            <input type="text" id="globalSearchInput" placeholder="Search invoices, clients, items..." autocomplete="off">
+          </div>
+
+          <!-- Voice Assistant Button -->
+          <button class="header-icon-btn" id="voiceBtn" title="Voice-to-Invoice Assistant">
+            🎙️
+          </button>
+
+          <!-- Theme Toggle -->
+          <button class="header-icon-btn" id="themeToggleBtn" title="Toggle Dark/Light Mode">
+            🌙
+          </button>
+
+          <!-- Notifications Bell -->
+          <button class="header-icon-btn" id="notifBtn" title="Notifications">
+            🔔
+            <span class="badge-dot" id="notifBadgeDot" style="display:none"></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Dynamic Page Container -->
+      <main class="main-content" id="mainContent">
+        <!-- Rendered by SPA router -->
+      </main>
+    </div>
+  </div>
+
+  <!-- Core Scripts in Exact Dependency Hierarchy -->
+  <script src="js/utils.js"></script>
+  <script src="js/db.js"></script>
+  <script src="js/templates.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/tax-engine.js"></script>
+  <script src="js/loyalty.js"></script>
+  <script src="js/notifications.js"></script>
+  <script src="js/billing-engine.js"></script>
+  <script src="js/analytics.js"></script>
+  <script src="js/pdf-generator.js"></script>
+
+  <!-- Page Modules -->
+  <script src="js/pages/dashboard.js"></script>
+  <script src="js/pages/invoices.js"></script>
+  <script src="js/pages/customers.js"></script>
+  <script src="js/pages/inventory.js"></script>
+  <script src="js/pages/reports.js"></script>
+  <script src="js/pages/settings.js"></script>
+
+  <!-- App Bootstrap -->
+  <script src="js/app.js"></script>
+</body>
+</html>
